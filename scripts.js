@@ -94,25 +94,27 @@ function setupEventListeners() {
 
         // Set theme colors based on user selection
         if (theme === 'night') {
-            document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
-            document.documentElement.style.setProperty('--color-light', '10, 10, 20');
-        } else {
             document.documentElement.style.setProperty('--color-dark', '10, 10, 20');
             document.documentElement.style.setProperty('--color-light', '255, 255, 255');
+            
+        } else {
+            document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
+            document.documentElement.style.setProperty('--color-light', '10, 10, 20');
+            
         }
         
         // Close the settings overlay after applying the theme
         document.querySelector('[data-settings-overlay]').open = false;
     });
 
-    // Handle form submission for search filters
+    // Handle form submission for search filters that Prevent the default form submission behavior
     document.querySelector('[data-search-form]').addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent the default form submission behavior
+        event.preventDefault();
         const formData = new FormData(event.target);
         const filters = Object.fromEntries(formData); // Get the form data as an object
         const result = [];
 
-        // Filter books based on the search criteria result true if 'any' is selected and exit the loop if genre match is found
+        // Filter books based on the search criteria result true if 'any' is selected  exit the loop if genre match is found
         for (const book of books) {
             let genreMatch = filters.genre === 'any';  
 
