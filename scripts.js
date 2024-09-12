@@ -94,12 +94,12 @@ function setupEventListeners() {
 
         // Set theme colors based on user selection
         if (theme === 'night') {
-            document.documentElement.style.setProperty('--color-dark', '10, 10, 20');
-            document.documentElement.style.setProperty('--color-light', '255, 255, 255');
             
-        } else {
             document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
             document.documentElement.style.setProperty('--color-light', '10, 10, 20');
+        } else {
+            document.documentElement.style.setProperty('--color-dark', '10, 10, 20');
+            document.documentElement.style.setProperty('--color-light', '255, 255, 255');
             
         }
         
@@ -137,10 +137,10 @@ function setupEventListeners() {
         page = 1;
         matches = result;
 
-        // Show or hide the no results message and update the book list
+        // Show or hide the no results message and update the book list Scroll to the top smoothly
         document.querySelector('[data-list-message]').classList.toggle('list__message_show', result.length < 1);
         updateBookList();
-        window.scrollTo({top: 0, behavior: 'smooth'}); // Scroll to the top smoothly
+        window.scrollTo({top: 0, behavior: 'smooth'}); 
         document.querySelector('[data-search-overlay]').open = false; // Close the search overlay
     });
 
