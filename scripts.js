@@ -7,9 +7,9 @@ import { books, authors, genres, BOOKS_PER_PAGE } from './data.js';
 let page = 1;
 let matches = books;
 
-// Function to update the list of books displayed based on the current page and matches
+// Function to update the list of books displayed based on the current page and matches, create a document fragment to hold the book elements
 function updateBookList() {
-    // Create a document fragment to hold the book elements
+    
     const starting = document.createDocumentFragment();
 
     // Add book previews for the current page to the fragment
