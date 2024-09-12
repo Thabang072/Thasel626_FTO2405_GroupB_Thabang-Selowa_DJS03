@@ -14,7 +14,7 @@ function updateBookList() {
 
     // Add book previews for the current page to the fragment
     for (const book of matches.slice((page - 1) * BOOKS_PER_PAGE, page * BOOKS_PER_PAGE)) {
-        starting.appendChild(createBookPreview(book, authors)); // Use the imported function to create book previews
+        starting.appendChild(createBookPreview(book, authors)); 
     }
 
     // Get the list items container and clear its current content
